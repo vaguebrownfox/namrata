@@ -38,7 +38,7 @@ export default function MyApp(props) {
 					insta={site.insta}
 				/>
 				<Component {...pageProps} />
-				<Copyright name={site.qn} />
+				<Copyright name={site.qn} src={site.src} />
 			</ThemeProvider>
 		</CacheProvider>
 	);

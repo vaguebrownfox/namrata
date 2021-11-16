@@ -15,6 +15,8 @@ const site = {
 		accent: "#864879",
 		light: "#E9A6A6",
 	},
+
+	src: "https://github.com/vaguebrownfox/namrata",
 };
 
 export default site;
