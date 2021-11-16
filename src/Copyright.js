@@ -4,7 +4,7 @@ import Link from "./Link";
 import classes from "./styles/Copyright.module.css";
 import theme from "./theme";
 import { IconButton } from "@mui/material";
-import GithubIcon from "@mui/icons-material/Github";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 export default function Copyright({ name, src }) {
 	return (
@@ -40,7 +40,7 @@ export default function Copyright({ name, src }) {
 				target="_blank"
 				rel="noreferrer"
 			>
-				<GithubIcon />
+				<GitHubIcon />
 			</IconButton>
 		</div>
 	);
