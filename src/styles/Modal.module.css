@@ -1,0 +1,9 @@
+.imageContainer {
+	display: block;
+	width: 50%;
+	max-width: 512px;
+	min-width: 300px;
+}
+.imageContainer:focus {
+	outline: 0;
+}
