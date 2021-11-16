@@ -16,7 +16,7 @@ const site = {
 		light: "#E9A6A6",
 	},
 
-	src: "https://github.com/vaguebrownfox/namrata",
+	src: "https://github.com/vaguebrownfox/namrata/",
 };
 
 export default site;
