@@ -25,7 +25,7 @@ export default function NomModal({
 		setTimeout(() => {
 			handleImageSlide(dir);
 			setChecked(true);
-		}, 500);
+		}, 1000);
 	};
 
 	return (
