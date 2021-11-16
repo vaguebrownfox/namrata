@@ -9,54 +9,86 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LocalFloristIcon from "@mui/icons-material/LocalFlorist";
 import theme from "../theme";
+import { Slide } from "@mui/material";
 
 export default function Header({ name, twitter, insta }) {
+	const [anim, setAnim] = React.useState(false);
+	React.useEffect(() => {
+		setTimeout(() => {
+			setAnim(true);
+		}, 1024);
+	}, []);
+
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position="static" size="">
 				<Toolbar variant="dense">
-					<IconButton
-						edge="start"
-						aria-label="menu"
-						href="/about"
-						sx={{ mr: 2, color: theme.palette.secondary.light }}
+					<Slide
+						in={anim}
+						direction="right"
+						style={{ transitionDuration: `${500}ms` }}
 					>
-						<LocalFloristIcon />
-					</IconButton>
-					<Typography
-						variant="h6"
-						color="inherit"
-						component={Link}
-						href="/about"
-						sx={{ flexGrow: 1, textDecoration: "none" }}
+						<IconButton
+							edge="start"
+							aria-label="menu"
+							href="/about"
+							sx={{ mr: 2, color: theme.palette.secondary.light }}
+						>
+							<LocalFloristIcon />
+						</IconButton>
+					</Slide>
+					<Slide
+						in={anim}
+						direction="right"
+						style={{ transitionDuration: `${500}ms` }}
 					>
-						{name || "Your Name"}
-					</Typography>
+						<Typography
+							variant="h6"
+							color="inherit"
+							component={Link}
+							href="/about"
+							sx={{ flexGrow: 1, textDecoration: "none" }}
+						>
+							{name || "Your Name"}
+						</Typography>
+					</Slide>
 					<div>
-						<IconButton
-							size="large"
-							aria-label="account of current user"
-							aria-controls="menu-appbar"
-							aria-haspopup="true"
-							color="inherit"
-							href={twitter || ""}
-							target="_blank"
-							rel="noreferrer"
+						<Slide
+							in={anim}
+							direction="left"
+							style={{ transitionDuration: `${500}ms` }}
 						>
-							<TwitterIcon />
-						</IconButton>
-						<IconButton
-							size="large"
-							aria-label="account of current user"
-							aria-controls="menu-appbar"
-							aria-haspopup="true"
-							color="inherit"
-							href={insta || ""}
-							target="_blank"
-							rel="noreferrer"
+							<IconButton
+								size="large"
+								aria-label="account of current user"
+								aria-controls="menu-appbar"
+								aria-haspopup="true"
+								color="inherit"
+								href={twitter || ""}
+								target="_blank"
+								rel="noreferrer"
+							>
+								<TwitterIcon />
+							</IconButton>
+						</Slide>
+						<Slide
+							in={anim}
+							direction="left"
+							style={{ transitionDuration: `${500}ms` }}
 						>
-							<InstagramIcon />
-						</IconButton>
+							<IconButton
+								size="large"
+								aria-label="account of current user"
+								aria-controls="menu-appbar"
+								aria-haspopup="true"
+								color="inherit"
+								href={insta || ""}
+								target="_blank"
+								rel="noreferrer"
+							>
+								<InstagramIcon />
+							</IconButton>
+						</Slide>
 					</div>
 				</Toolbar>
 			</AppBar>

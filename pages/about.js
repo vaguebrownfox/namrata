@@ -16,15 +16,17 @@ export default function About() {
 					About me!
 				</Typography>
 				<AboutBox boutme={site.boutme} />
-				<Button
-					variant="outlined"
-					component={Link}
-					noLinkStyle
-					endIcon={<FilterVintageIcon />}
-					href="/"
-				>
-					Home
-				</Button>
+				<div style={{ display: "flex", justifyContent: "center" }}>
+					<Button
+						variant="outlined"
+						component={Link}
+						noLinkStyle
+						endIcon={<FilterVintageIcon />}
+						href="/"
+					>
+						Home
+					</Button>
+				</div>
 			</Box>
 		</Container>
 	);
