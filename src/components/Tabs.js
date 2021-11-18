@@ -61,6 +61,7 @@ export const Tabs = ({ noms, mon }) => {
 					[theme.breakpoints.down("md")]: {
 						justifyContent: "center",
 					},
+					minHeight: "90vh",
 				}}
 			>
 				{noms.map((nom, i) => {
