@@ -1,9 +1,14 @@
+// UPDATE favicon in public/icon
+// ADD pictures to public/noms
+
+// Use this config file to make changes in the site
+
 const site = {
 	name: "Namrata",
 	mon: "Fairly Artistque",
 	qn: "nomnom",
 
-	boutme: "hehe :3 ",
+	boutme: "hehe :3 (write about yourself)",
 
 	insta: "https://www.instagram.com/fairly_artistque/",
 	twitter: "https://twitter.com/fairly_artistic/",
