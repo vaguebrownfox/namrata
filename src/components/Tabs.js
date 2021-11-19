@@ -90,6 +90,9 @@ export const Tabs = ({ noms, mon }) => {
 										height={256} // Desired size with correct aspect ratio
 										width={256} // Desired size with correct aspect ratio
 										alt={nom.id}
+										priority
+										placeholder="blue"
+										blurDataURL
 									/>
 								</Paper>
 							</Grid>
