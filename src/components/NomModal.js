@@ -62,6 +62,9 @@ export default function NomModal({
 								height={512}
 								layout="responsive"
 								onClick={handleClose}
+								priority
+								placeholder="blur"
+								blurDataURL
 							/>
 						</div>
 					</Zoom>
