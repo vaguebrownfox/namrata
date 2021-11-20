@@ -41,7 +41,7 @@ const Poles = () => {
 			let speed = Math.sqrt(dx * dx + dy * dy);
 
 			const count = speed * 10; // increasing value for sine function wiggle
-			const k1 = -4 - speed / 5; // length of tail segs
+			const k1 = -5 - speed / 3; // length of tail segs
 
 			// Bounce off the walls.
 			if (x < 0 || x > ctx.canvas.width) {
