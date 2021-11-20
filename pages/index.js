@@ -14,13 +14,6 @@ export default function Index({ noms }) {
 			<Box sx={{ my: 4 }}>
 				<Tabs mon={site.mon} noms={noms} />
 			</Box>
-			<style jsx global>{`
-				/* Other global styles such as 'html, body' etc... */
-
-				#__next {
-					position: relative;
-				}
-			`}</style>
 		</Container>
 	);
 }

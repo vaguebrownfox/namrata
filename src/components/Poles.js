@@ -25,7 +25,7 @@ const Poles = () => {
 		grd.addColorStop(0, "white");
 		grd.addColorStop(1, blue[100]);
 		ctx.fillStyle = grd;
-		ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.width);
+		ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
 		for (const t of this.poles) {
 			let dx = t.v.x;
@@ -41,7 +41,7 @@ const Poles = () => {
 			let speed = Math.sqrt(dx * dx + dy * dy);
 
 			const count = speed * 10; // increasing value for sine function wiggle
-			const k1 = -5 - speed / 3; // length of tail segs
+			const k1 = -4 - speed / 5; // length of tail segs
 
 			// Bounce off the walls.
 			if (x < 0 || x > ctx.canvas.width) {
@@ -107,10 +107,8 @@ const Poles = () => {
 	React.useEffect(() => {
 		setPoles([]);
 		const n = 12;
-		const m = 12;
-		const v = 3;
 
-		const p = new Array(n).fill(0).map(() => new Pole({ size, v, m }));
+		const p = new Array(n).fill(0).map(() => new Pole({ size }));
 
 		setPoles([...p]);
 	}, []);
@@ -129,14 +127,16 @@ const Poles = () => {
 export default Poles;
 
 class Pole {
-	constructor({ size, v, m }) {
+	constructor({ size }) {
+		this.m = 12;
+		this.vel = 3;
 		this.p = {
-			x: new Array(m).fill(Math.random() * size.width),
-			y: new Array(m).fill(Math.random() * size.height),
+			x: new Array(this.m).fill(Math.random() * size.width),
+			y: new Array(this.m).fill(Math.random() * size.height),
 		};
 		this.v = {
-			x: (Math.random() - 0.5) * v,
-			y: (Math.random() - 0.5) * v,
+			x: (Math.random() - 0.5) * this.vel,
+			y: (Math.random() - 0.5) * this.vel,
 		};
 		this.count = 0;
 	}
