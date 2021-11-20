@@ -39,7 +39,7 @@ export const Tabs = ({ noms, mon }) => {
 					sx={{
 						paddingLeft: theme.spacing(2),
 						textAlign: "flex-start",
-						[theme.breakpoints.down("md")]: {
+						[theme.breakpoints.down("lg")]: {
 							textAlign: "center",
 						},
 					}}
@@ -58,7 +58,7 @@ export const Tabs = ({ noms, mon }) => {
 				sx={{
 					padding: theme.spacing(2),
 					justifyContent: "flex-start",
-					[theme.breakpoints.down("md")]: {
+					[theme.breakpoints.down("lg")]: {
 						justifyContent: "center",
 					},
 					minHeight: "90vh",

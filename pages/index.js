@@ -4,14 +4,23 @@ import Box from "@mui/material/Box";
 import { Tabs } from "../src/components/Tabs";
 import site from "../config";
 import { getSortedNoms } from "../src/lib/noms";
+import { CanvasDraw } from "../src/components/CanvasDraw";
+import Poles from "../src/components/Poles";
 
 export default function Index({ noms }) {
 	console.log({ noms });
 	return (
-		<Container maxWidth="lg">
+		<Container sx={{ position: "relative" }} maxWidth="lg">
 			<Box sx={{ my: 4 }}>
 				<Tabs mon={site.mon} noms={noms} />
 			</Box>
+			<style jsx global>{`
+				/* Other global styles such as 'html, body' etc... */
+
+				#__next {
+					position: relative;
+				}
+			`}</style>
 		</Container>
 	);
 }
