@@ -80,12 +80,12 @@ const Poles = () => {
 			}
 			ctx.restore();
 
-			// // Body
-			// ctx.beginPath();
-			// ctx.moveTo(t.p.x[0], t.p.y[0]);
-			// for (let i = 1; i < 2; ++i) ctx.lineTo(t.p.x[i], t.p.y[i]);
-			// ctx.lineWidth = 0;
-			// ctx.stroke();
+			// Body
+			ctx.beginPath();
+			ctx.moveTo(t.p.x[0], t.p.y[0]);
+			for (let i = 1; i < 2; ++i) ctx.lineTo(t.p.x[i], t.p.y[i]);
+			ctx.lineWidth = 0;
+			ctx.stroke();
 
 			// Tail
 			// const inv = t.v.x / t.v.y < 0 ? 1 : -1;
