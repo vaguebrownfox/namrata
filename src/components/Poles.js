@@ -56,7 +56,8 @@ const Poles = () => {
 				const vx = x - t.p.x[j];
 				const vy = y - t.p.y[j];
 				const k2 =
-					Math.cos(((t.count += count) + j * 60) / 3200) / speed;
+					Math.cos(((t.count += count) + j * 6) / 2400) /
+					(speed * 1.4);
 				t.p.x[j] = (x += (dx / speed) * k1) - dy * k2;
 				t.p.y[j] = (y += (dy / speed) * k1) + dx * k2;
 				speed = Math.sqrt((dx = vx) * dx + (dy = vy) * dy);
@@ -131,7 +132,7 @@ export default Poles;
 class Pole {
 	constructor({ size }) {
 		this.m = 22;
-		this.vel = 3;
+		this.vel = 2;
 		this.p = {
 			x: new Array(this.m).fill(Math.random() * 200),
 			y: new Array(this.m).fill(Math.random() * 10),
