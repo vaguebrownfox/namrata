@@ -41,7 +41,7 @@ const Poles = () => {
 			let speed = Math.sqrt(dx * dx + dy * dy);
 
 			const count = speed * 10; // increasing value for sine function wiggle
-			const k1 = -5 - speed / 3; // length of tail segs
+			const k1 = -4 - speed / 3; // length of tail segs
 
 			// Bounce off the walls.
 			if (x < 0 || x > ctx.canvas.width) {
@@ -55,16 +55,14 @@ const Poles = () => {
 			for (var j = 1; j < mtail; ++j) {
 				const vx = x - t.p.x[j];
 				const vy = y - t.p.y[j];
-				const k2 = Math.cos(((t.count += count) + j * 3) / 600) / speed;
+				const k2 =
+					Math.cos(((t.count += count) + j * 60) / 3200) / speed;
 				t.p.x[j] = (x += (dx / speed) * k1) - dy * k2;
 				t.p.y[j] = (y += (dy / speed) * k1) + dx * k2;
 				speed = Math.sqrt((dx = vx) * dx + (dy = vy) * dy);
 			}
 
 			// Head
-			// ctx.fillStyle = `hsla(${
-			// 	270 * Math.cos(t.count * 0.000005)
-			// }, 100%, 65%, 1)`;
 			ctx.save();
 			ctx.translate(t.p.x[0], t.p.y[0]);
 			ctx.rotate(Math.atan2(t.v.y, t.v.x) - Math.PI / 2);
@@ -83,8 +81,12 @@ const Poles = () => {
 			// Body
 			ctx.beginPath();
 			ctx.moveTo(t.p.x[0], t.p.y[0]);
-			for (let i = 1; i < 2; ++i) ctx.lineTo(t.p.x[i], t.p.y[i]);
-			ctx.lineWidth = 0;
+			for (let i = 1; i < 3; ++i) {
+				let f = (i / mtail - 1) * (i / mtail - 1);
+				ctx.strokeStyle = `hsla(${50 / (1 + f)}, 100%, 65%, 1)`;
+				ctx.lineTo(t.p.x[i], t.p.y[i]);
+				ctx.lineWidth = 3 * i;
+			}
 			ctx.stroke();
 
 			// Tail
@@ -106,7 +108,7 @@ const Poles = () => {
 
 	React.useEffect(() => {
 		setPoles([]);
-		const n = 12;
+		const n = 8;
 
 		const p = new Array(n).fill(0).map(() => new Pole({ size }));
 
@@ -128,11 +130,11 @@ export default Poles;
 
 class Pole {
 	constructor({ size }) {
-		this.m = 12;
+		this.m = 22;
 		this.vel = 3;
 		this.p = {
-			x: new Array(this.m).fill(Math.random() * size.width),
-			y: new Array(this.m).fill(Math.random() * size.height),
+			x: new Array(this.m).fill(Math.random() * 200),
+			y: new Array(this.m).fill(Math.random() * 10),
 		};
 		this.v = {
 			x: (Math.random() - 0.5) * this.vel,
