@@ -52,7 +52,8 @@ export default function MyApp(props) {
 					position: relative;
 					height: 100%;
 					width: 100%;
-					min-height: 70vh;
+					min-height: 100vh;
+					padding-bottom: 21px;
 				}
 			`}</style>
 		</>
