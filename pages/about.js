@@ -10,24 +10,26 @@ import site from "../config";
 
 export default function About() {
 	return (
-		<Container maxWidth="sm">
-			<Box sx={{ my: 4 }}>
-				<Typography variant="h4" component="h1" gutterBottom>
-					About me!
-				</Typography>
-				<AboutBox boutme={site.boutme} />
-				<div style={{ display: "flex", justifyContent: "center" }}>
-					<Button
-						variant="outlined"
-						component={Link}
-						noLinkStyle
-						endIcon={<FilterVintageIcon />}
-						href="/"
-					>
-						Home
-					</Button>
-				</div>
-			</Box>
-		</Container>
+		<>
+			<Container maxWidth="sm">
+				<Box sx={{ my: 4 }}>
+					<Typography variant="h4" component="h1" gutterBottom>
+						About me!
+					</Typography>
+					<AboutBox boutme={site.boutme} />
+					<div style={{ display: "flex", justifyContent: "center" }}>
+						<Button
+							variant="outlined"
+							component={Link}
+							noLinkStyle
+							endIcon={<FilterVintageIcon />}
+							href="/"
+						>
+							Home
+						</Button>
+					</div>
+				</Box>
+			</Container>
+		</>
 	);
 }

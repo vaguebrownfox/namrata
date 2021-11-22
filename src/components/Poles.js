@@ -109,7 +109,7 @@ const Poles = () => {
 
 	React.useEffect(() => {
 		setPoles([]);
-		const n = 8;
+		const n = 2;
 
 		const p = new Array(n).fill(0).map(() => new Pole({ size }));
 
@@ -132,7 +132,7 @@ export default Poles;
 class Pole {
 	constructor({ size }) {
 		this.m = 22;
-		this.vel = 2;
+		this.vel = 3;
 		this.p = {
 			x: new Array(this.m).fill(Math.random() * 200),
 			y: new Array(this.m).fill(Math.random() * 10),
