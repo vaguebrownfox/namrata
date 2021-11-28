@@ -10,6 +10,7 @@ import createEmotionCache from "../src/createEmotionCache";
 import Header from "../src/components/Header";
 import Copyright from "../src/Copyright";
 import Poles from "../src/components/Poles";
+import Voronoi from "../src/components/Voronoi";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -40,7 +41,7 @@ export default function MyApp(props) {
 						insta={site.insta}
 					/>
 					<Component {...pageProps} />
-					<Poles />
+					<Voronoi />
 
 					<Copyright name={site.qn} src={site.src} />
 				</ThemeProvider>
