@@ -8,7 +8,7 @@ const site = {
 	mon: "Fairly Artistque",
 	qn: "nomnom",
 
-	boutme: "hehe :3 (write about yourself)",
+	boutme: "Eloquently undecided :)",
 
 	insta: "https://www.instagram.com/fairly_artistque/",
 	twitter: "https://twitter.com/fairly_artistic/",
