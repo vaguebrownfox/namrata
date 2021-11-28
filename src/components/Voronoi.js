@@ -31,11 +31,11 @@ const Voronoi = () => {
 		yield* circle(cx, cy, 60, 3, -0.05 * t);
 		yield* circle(cx, cy, 15, 3, -0.02 * t);
 		yield* circle(cx, cy, 1, 1, -0.02 * t);
-		yield* circle(-250 + cx, -120 + cy, 80, 6, -0.02 * t);
-		yield* circle(-230 + cx, -120 + cy, 0, 1, -0.02 * t);
-		yield* circle(-280 + cx, 120 + cy, 40, 6, 0.02 * t);
-		yield* circle(-220 + cx, 120 + cy, 20, 3, -0.02 * t);
-		yield* circle(-290 + cx, 120 + cy, 0, 1, 0.02 * t);
+		yield* circle(-250 + cx, -120 + cy, 180, 6, -0.02 * t);
+		yield* circle(-230 + cx, -120 + cy, 30, 1, -0.02 * t);
+		yield* circle(-280 + cx, 120 + cy, 40, 12, 0.02 * t);
+		yield* circle(-290 + cx, 120 + cy, 20, 4, -0.02 * t);
+		yield* circle(-490 + cx, 120 + cy, 0, 3, 0.02 * t);
 	}
 
 	function resample(curve, points) {
