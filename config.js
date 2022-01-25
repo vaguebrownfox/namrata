@@ -15,13 +15,13 @@ const site = {
 	reddit: "",
 
 	colors: {
-		primary: "#1F1D36",
-		secondary: "#3F3351",
-		accent: "#864879",
-		light: "#E9A6A6",
+		primary: "#fff",
+		secondary: "#000",
+		accent: "#000",
+		light: "#cdcdcd",
 	},
 
-	src: "   ",
+	src: "/",
 };
 
 export default site;
